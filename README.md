@@ -49,19 +49,19 @@
 
 **Chunk size:**
 
-500 characters
+200 characters
 
 **Overlap:**
 
-100 characters
+40 characters
 
 **Why these choices fit your documents:**
 
-Most of my documents consist of short student reviews, discussion posts, and comments rather than long articles. A chunk size of 500 characters is large enough to preserve complete opinions and experiences while remaining focused on a single topic. A 100-character overlap helps preserve context when important information appears near the boundary between two chunks. Smaller chunks could split reviews into fragments that lose meaning, while much larger chunks could combine unrelated opinions and reduce retrieval accuracy.
+Most of my documents consist of short student reviews, discussion posts, and comments rather than long articles. A chunk size of 200 characters is large enough to preserve complete opinions and experiences while remaining focused on a single topic. A 40-character overlap helps preserve context when important information appears near the boundary between two chunks. Smaller chunks could split reviews into fragments that lose meaning, while much larger chunks could combine unrelated opinions and reduce retrieval accuracy.
 
 **Final chunk count:**
 
-39 chunks
+94 chunks
 
 ---
 
@@ -92,7 +92,13 @@ Most of my documents consist of short student reviews, discussion posts, and com
 
 **Model used:**
 
+all-MiniLM-L6-v2 (SentenceTransformers)
+
+It is lightweight, fast, and performs well for semantic similarity tasks like document retrieval. It runs locally without API cost, making it ideal for prototyping RAG systems.
+
 **Production tradeoff reflection:**
+
+If deployed at scale, I would consider models like OpenAI text-embedding-3-large or bge-large because they produce higher-quality semantic embeddings, especially for nuanced academic text. However, these come with tradeoffs: API cost, latency, and dependency on external services. Local models like MiniLM are faster and private but less accurate for subtle distinctions between similar CS concepts.
 
 ---
 
@@ -102,36 +108,36 @@ Most of my documents consist of short student reviews, discussion posts, and com
      For at least 2 of the 3, explain why the returned chunks are relevant to the query.
      Results must be text — not screenshots. -->
 
-**Query 1:**
+**Query 1:** What do students think about CS 141?
 
 Top returned chunks:
--
--
--
+- cs141_rant.txt (discussion of ZyBooks reliance + independent learning)
+- uic_grades.txt (course overview + difficulty variation)
+- grade_distribution.txt (intro course context)
 
-Relevance explanation:
+Relevance explanation: Chunks are highly relevant because they directly describe CS 141 student experience, learning difficulty, and reliance on ZyBooks. The retrieval correctly prioritizes student opinion-based documents.
 
 ---
 
-**Query 2:**
+**Query 2:** What is CS 401 like with Danko?
 
 Top returned chunks:
--
--
--
+- cs401_danko.txt (direct description of professor)
+- ratemyprofessor.txt (student feedback and ratings)
+- uic_cs_program.txt (context about CS program)
 
-Relevance explanation:
+Relevance explanation: The model correctly retrieves professor-specific reviews and student feedback, showing strong semantic matching for instructor-related queries.
 
 ---
 
-**Query 3:**
+**Query 3:** Is UIC CS good for internships?
 
 Top returned chunks:
--
--
--
+- cs_undergrad_uic.txt (career fairs + internships)
+- uic_cs_program.txt (program strengths)
+- uic_grades.txt (course structure + outcomes)
 
-Relevance explanation:
+Relevance explanation: Retrieval successfully identifies career-related sections even without explicit “internship” keywords, showing good semantic embedding performance.
 
 ---
 
@@ -146,7 +152,29 @@ Relevance explanation:
 
 **System prompt grounding instruction:**
 
+“Use ONLY the provided context. If the answer is not in the context, say: ‘I don't have enough information in the provided documents.’ Do NOT use outside knowledge.”
+
+The retrieved chunks are inserted into the prompt under a structured CONTEXT section along with metadata (source filename + chunk text). The model is not allowed to access any external knowledge beyond this injected context.
+
+To strengthen grounding, the system limits answers strictly to retrieved chunks, requires explicit refusal when context is insufficient, passes multiple top-k chunks (k=5) from ChromaDB, and includes document source names inside metadata for traceability
+
 **How source attribution is surfaced in the response:**
+
+Source attribution is handled programmatically (not left to the model). After retrieval:
+
+Each chunk includes:
+source (file name)
+chunk_id
+The retrieval function returns both:
+answer
+sources
+
+The UI (or CLI test script) prints sources like:
+
+SOURCES:
+['cs141_rant.txt', 'uic_grades.txt']
+
+This ensures attribution is always present even if the model does not explicitly mention sources.
 
 ---
 
@@ -158,29 +186,29 @@ Relevance explanation:
 
 **Grounded response 1**
 
-Query:
+Query: What do students think about CS 141?
 
-Response:
+Response: Students reported that CS 141 required substantial independent learning outside of lecture.
 
-Source attribution:
+Source attribution: cs141_rant.txt, cs401_danko.txt, grade_distribution.txt, uic_grades.txt, ratemyprofessor.txt
 
 ---
 
 **Grounded response 2**
 
-Query:
+Query: What is Professor Danko like in CS 401?
 
-Response:
+Response: Professor Danko is approachable, willing to help, and has clear grading policies, making him a student-friendly option in CS 401.
 
-Source attribution:
+Source attribution: ratemyprofessor.txt, cs401_danko.txt
 
 ---
 
 **Out-of-scope query**
 
-Query:
+Query: Does CS 141 have a final exam date?
 
-System response (refusal):
+System response (refusal): I don't have enough information in the provided documents.
 
 ---
 
@@ -191,7 +219,14 @@ System response (refusal):
 
 **Input fields:**
 
+Textbox input for user question
+Submit button (“Ask”)
+
 **Output format:**
+
+Answer (LLM-generated grounded response)
+Retrieved sources list
+Optional distance scores (during debugging mode)
 
 ---
 
@@ -202,7 +237,11 @@ System response (refusal):
 
 > **User:** 
 
+What are common complaints about CS 141?
+
 > **System:** 
+
+Common complaints about CS 141 involve ZyBooks serving as the textbook and the requirement of substantial independent learning outside of lecture.
 
 ---
 
@@ -214,14 +253,14 @@ System response (refusal):
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | What do students think about CS 141? | Students struggle, ZyBooks heavy, lecture lag | Correct summary of ZyBooks reliance and self-learning | Relevant | Accurate |
+| 2 | What is CS 401 like with Danko? | Approachable, fair grading, reasonable workload | Correct: mentions approachable + fair | Relevant | Accurate |
+| 3 | Which CS classes are hardest at UIC? | CS 251 / CS 351 / CS 261 considered harder | Partial mention via grade distribution, not explicit ranking | Partially relevant | Partially accurate |
+| 4 | Does CS 141 have a final exam? | Not explicitly documented | System correctly refuses | Relevant | Accurate |
+| 5 | Is UIC CS good for internships? | Career fairs + networking + project value | Correct: mentions internships, networking | Relevant | Accurate |
 
-**Retrieval quality:** Relevant / Partially relevant / Off-target  
-**Response accuracy:** Accurate / Partially accurate / Inaccurate
+**Retrieval quality:** Mostly relevant 
+**Response accuracy:** Mostly accurate
 
 ---
 
@@ -240,11 +279,19 @@ System response (refusal):
 
 **Question that failed:**
 
+Which CS classes are the hardest at UIC?
+
 **What the system returned:**
+
+Returned grade distribution and general course descriptions but did not explicitly rank hardest courses clearly.
 
 **Root cause (tied to a specific pipeline stage):**
 
+Retrieval stage issue: chunks contain difficulty hints, but not explicit comparative ranking, embeddings retrieved related CS course info instead of synthesizing “hardest courses”, chunking did not isolate comparative statements cleanly
+
 **What you would change to fix it:**
+
+Add a “difficulty summary chunk” during preprocessing, improve metadata tagging (e.g., difficulty_level), increase chunk overlap for course comparison sections, optionally rerank retrieved chunks before generation
 
 ---
 
@@ -255,7 +302,11 @@ System response (refusal):
 
 **One way the spec helped you during implementation:**
 
+The spec strongly enforced a clean separation between ingestion, embedding, retrieval, and generation. This made debugging much easier because each stage could be tested independently. For example, I was able to isolate retrieval issues before introducing the LLM, which prevented compounding errors later in the pipeline.
+
 **One way your implementation diverged from the spec, and why:**
+
+I initially used character-based chunking instead of token-based chunking. This diverged from the ideal recommendation because it was simpler and faster to implement, and still worked well for short text-based Reddit-style documents. However, token-based chunking would likely improve consistency for longer or more structured documents.
 
 ---
 
@@ -272,12 +323,12 @@ System response (refusal):
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My chunking strategy + dataset description (short Reddit discussions)
+- *What it produced:* A character-based chunking function with overlap and a full ingestion pipeline
+- *What I changed or overrode:* Reduced chunk size from 500 → 200 characters and adjusted overlap to 40 for better retrieval precision
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My Milestone 5 requirement for grounding + Gradio interface template
+- *What it produced:* A full RAG pipeline structure with: system prompt grounding rules, retrieval → LLM → response flow, and source attribution formatting
+- *What I changed or overrode:* I enforced stricter refusal behavior (“I don’t have enough information”) and ensured sources were always appended programmatically instead of relying on the model
