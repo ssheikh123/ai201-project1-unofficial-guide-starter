@@ -1,0 +1,18 @@
+Common Themes Identified From Student Discussions
+
+Many students reported that CS 141 required substantial independent learning outside of lecture.
+
+Frequently mentioned concerns:
+- ZyBooks serving as the primary learning resource.
+- Lecture pacing not matching assigned material.
+- Difficult transition for students with no prior coding experience.
+- Lab assignments requiring significant outside practice.
+
+Frequently mentioned success strategies:
+- Complete ZyBooks carefully.
+- Practice coding every day.
+- Attend office hours.
+- Ask TAs for help when available.
+- Supplement lectures with online tutorials.
+
+Several students noted that learning programming requires consistent practice and repetition. Students who coded outside of class often reported better outcomes.

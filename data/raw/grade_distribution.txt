@@ -1,0 +1,53 @@
+Title: UIC Grade Distribution and Course Difficulty Notes
+
+CS 141
+Difficulty Level: Introductory
+Notes:
+- Entry-level programming course.
+- Grade outcomes vary significantly by instructor.
+- Frequently taken by first-year CS students.
+
+CS 151
+Difficulty Level: Moderate
+Notes:
+- Mathematical foundations course.
+- Strong predictor of success in later theoretical CS courses.
+
+CS 211
+Difficulty Level: Moderate
+Notes:
+- Programming-intensive course.
+- Students often pair it with CS 251.
+
+CS 251
+Difficulty Level: Moderate to High
+Notes:
+- Core data structures course.
+- Considered one of the most valuable courses in the curriculum.
+- Significant project workload.
+
+CS 261
+Difficulty Level: High
+Notes:
+- Frequently described by students as one of the harder required CS courses.
+- Heavy focus on low-level computing concepts.
+
+CS 301
+Difficulty Level: Moderate
+Notes:
+- Theory-focused course.
+- Covers automata and formal languages.
+- Generally viewed more positively with certain instructors.
+
+CS 341
+Difficulty Level: High
+Notes:
+- Student experience varies widely depending on instructor.
+- Historically receives mixed reviews.
+
+CS 401
+Difficulty Level: High
+Notes:
+- Algorithms course.
+- Important preparation for technical interviews.
+- Difficulty varies by professor and semester.

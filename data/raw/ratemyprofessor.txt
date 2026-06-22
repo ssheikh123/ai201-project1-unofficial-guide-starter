@@ -1,0 +1,56 @@
+Title: RateMyProfessor UIC Computer Science Summary
+
+Professor: Gonzalo Bello
+Overall Rating: 4.9/5
+Would Take Again: 98%
+Student Feedback:
+- One of the highest rated CS professors at UIC.
+- Clear explanations and organized lectures.
+- Fair grading and approachable personality.
+- Frequently recommended for CS 151 and CS 301.
+
+Professor: Joseph Hummel
+Overall Rating: 3.8/5
+Would Take Again: 58%
+Student Feedback:
+- Strong knowledge of data structures and systems.
+- Helpful during office hours.
+- Students who attend lectures and start projects early often succeed.
+- Some students consider his courses difficult and workload heavy.
+
+Professor: Jon Solworth
+Overall Rating: 2.1/5
+Would Take Again: 24%
+Student Feedback:
+- Frequently criticized for disorganized lectures.
+- Students report outdated materials and confusing course structure.
+- Common complaints involve CS 341.
+- Some positive reviews praise his resources and teaching assistants.
+
+Professor: Sara Riazi
+Student Feedback:
+- Mixed reviews from students.
+- Common complaints involve communication and lecture clarity.
+- Limited reviews for upper-level courses such as CS 480.
+- Newer faculty member compared to many UIC professors.
+
+Professor: Danko
+Student Feedback:
+- Frequently described as approachable and personable.
+- Fair grading policies.
+- Students report manageable workload.
+- Positive reputation among students taking advanced courses.
+
+Professor: McCarty
+Student Feedback:
+- Often recommended for CS 151.
+- Clear lectures and supportive teaching style.
+- Frequently praised by students on Reddit discussions.
+- Considered one of the stronger introductory CS instructors.
+
+Professor: Mobasheri
+Student Feedback:
+- Strong reviews from students in CS 401.
+- Engaging lectures and helpful explanations.
+- Frequently listed among favorite professors by graduating students.
+- Well-regarded for graph and algorithm related topics.

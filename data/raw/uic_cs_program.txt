@@ -1,0 +1,29 @@
+Additional Perspectives on the UIC Computer Science Program
+
+Students frequently describe UIC Computer Science as a practical and affordable option for earning a CS degree.
+
+Strengths often mentioned:
+- Location in Chicago.
+- Access to internships.
+- Research opportunities.
+- Large course selection.
+- Affordable tuition compared to many universities.
+
+Challenges often mentioned:
+- Variation in professor quality.
+- Heavy workloads in certain courses.
+- Competitive student culture in some classes.
+- Significant self-learning requirements.
+
+Preparation for Industry
+
+Many students felt that coursework alone was not enough to secure internships or full-time jobs. Students frequently supplemented their education through personal projects, hackathons, research experiences, and technical interview preparation.
+
+Recommended activities included:
+- Building portfolio projects.
+- Participating in student organizations.
+- Attending networking events.
+- Contributing to open-source software.
+- Practicing coding interview questions.
+
+Students generally agreed that combining coursework with practical experience improved career outcomes significantly.

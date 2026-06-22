@@ -1,0 +1,38 @@
+Additional Information About CS 351
+
+CS 351 focuses on advanced data structures and practical implementation techniques.
+
+Students considering the course often ask about:
+- Workload
+- Programming projects
+- Difficulty level
+- Interview preparation value
+
+Skills commonly associated with the course include:
+- Advanced tree structures
+- Graph data structures
+- Hashing techniques
+- Performance optimization
+- Algorithm implementation
+
+The course may provide useful preparation for technical interviews because it emphasizes efficient problem solving and data structure selection.
+
+Students are generally advised to have a strong understanding of CS 251 concepts before enrolling.
+
+Success strategies:
+- Review data structures beforehand.
+- Start projects early.
+- Attend office hours.
+- Test code extensively.
+
+Career and Interview Relevance
+
+Students interested in software engineering internships often viewed CS 351 as useful because it reinforced advanced problem-solving skills. Topics covered in the course may appear during technical interviews and coding assessments.
+
+Students frequently recommended:
+- Reviewing asymptotic analysis.
+- Practicing implementation of data structures.
+- Understanding tradeoffs between different solutions.
+- Learning how performance impacts software design.
+
+Many students believed the course helped bridge the gap between theoretical knowledge and practical programming experience.

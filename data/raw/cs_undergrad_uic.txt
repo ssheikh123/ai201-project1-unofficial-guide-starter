@@ -1,0 +1,31 @@
+Title: CS Undergraduate Experience at UIC
+
+Students described the UIC Computer Science undergraduate experience.
+
+Positive points:
+- Career fairs and networking opportunities.
+- Undergraduate research opportunities.
+- Helpful office hours and faculty support.
+- New CS building and departmental growth.
+
+Challenges:
+- Heavy homework and project workload.
+- Some professors assign projects with tight deadlines.
+- Several courses require substantial self-learning.
+- Internship opportunities can be difficult to obtain during the first two years.
+
+Students generally agreed that success depends on time management, attending office hours, and starting projects early.
+
+Most commenters considered UIC a respectable choice for computer science, especially given its cost.
+
+Student Success Tips
+
+Upperclassmen often advise new students to begin projects as soon as they are assigned rather than waiting until deadlines approach. Because many CS courses contain programming assignments that can take longer than expected, early progress can reduce stress later in the semester.
+
+Students also recommended:
+- Attending office hours consistently.
+- Building relationships with classmates.
+- Using tutoring and academic support resources.
+- Reviewing material weekly instead of before exams.
+
+These habits were frequently associated with stronger academic performance.

@@ -1,0 +1,27 @@
+Additional Notes on CS 401 with Professor Danko
+
+Students frequently describe Professor Danko as approachable and willing to help students understand difficult algorithm concepts. Office hours are often recommended by former students because he is willing to explain solutions in multiple ways.
+
+Topics commonly associated with CS 401 include:
+- Algorithm design
+- Dynamic programming
+- Graph algorithms
+- Greedy algorithms
+- Divide and conquer
+- Complexity analysis
+
+Students reported that assignments were challenging but fair. Homework was considered manageable when started early. Several students stated that the course was difficult because of the material itself rather than the instructor.
+
+Compared with other CS 401 instructors, Danko was often viewed as one of the more student-friendly options. Students appreciated clear grading policies and reasonable workload expectations.
+
+Student Advice for CS 401
+
+Former students often recommend treating CS 401 as one of the most important courses in the curriculum because many interview questions are based on algorithmic problem solving. Students reported that practicing problems regularly was more effective than cramming before exams.
+
+Common study techniques included:
+- Working through example algorithms by hand.
+- Practicing runtime analysis.
+- Solving programming challenges.
+- Forming study groups with classmates.
+
+Many students believed that understanding the reasoning behind algorithms was more important than memorizing solutions. Students who consistently practiced throughout the semester generally reported better outcomes.

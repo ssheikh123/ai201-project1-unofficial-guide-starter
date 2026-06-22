@@ -1,0 +1,50 @@
+Title: UIC Computer Science Grade Trends
+
+Course: CS 141 - Programming I
+Observations:
+- Introductory programming course.
+- Large enrollment every semester.
+- Student success often depends on instructor and prior programming experience.
+- Frequently discussed as a foundation for later CS courses.
+
+Course: CS 151 - Mathematical Foundations of Computing
+Observations:
+- Important prerequisite for many upper-level CS courses.
+- Students often recommend taking strong instructors such as Bello or McCarty.
+- Heavy emphasis on logic and discrete mathematics.
+
+Course: CS 211 - Programming Practicum
+Observations:
+- Commonly taken alongside CS 251.
+- Project-based course with significant coding assignments.
+- Requires strong time management.
+
+Course: CS 251 - Data Structures
+Observations:
+- Frequently described as one of the most important CS courses.
+- Covers trees, graphs, hash tables, sorting, and searching.
+- Students consider it valuable but time consuming.
+
+Course: CS 261 - Machine Organization
+Observations:
+- Frequently described as challenging.
+- Covers assembly language and computer architecture.
+- Students often report significant workload.
+
+Course: CS 301 - Languages and Automata
+Observations:
+- Covers automata theory and formal languages.
+- Students often report positive experiences with Bello and McCarty.
+- Important theoretical CS course.
+
+Course: CS 341 - Programming Language Design
+Observations:
+- Student experiences vary significantly by instructor.
+- Historically associated with criticism when taught by certain professors.
+- Covers language design concepts and functional programming.
+
+Course: CS 401 - Computer Algorithms
+Observations:
+- One of the most important upper-level CS courses.
+- Difficulty depends heavily on instructor.
+- Strong preparation for technical interviews and advanced coursework.
