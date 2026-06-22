@@ -43,15 +43,15 @@ I chose UIC CS professor reviews. This knowledge can be very widespread and vagu
 
 **Chunk size:**
 
-500 characters
+200 characters
 
 **Overlap:**
 
-100 characters
+40 characters
 
 **Reasoning:**
 
-Most of my documents consist of short student reviews, discussion posts, and comments rather than long articles. A chunk size of 500 characters is large enough to preserve complete opinions and experiences while remaining focused on a single topic. A 100-character overlap helps preserve context when important information appears near the boundary between two chunks. Smaller chunks could split reviews into fragments that lose meaning, while much larger chunks could combine unrelated opinions and reduce retrieval accuracy.
+Most of my documents consist of short student reviews, discussion posts, and comments rather than long articles. A chunk size of 200 characters is large enough to preserve complete opinions and experiences while remaining focused on a single topic. A 40-character overlap helps preserve context when important information appears near the boundary between two chunks. Smaller chunks could split reviews into fragments that lose meaning, while much larger chunks could combine unrelated opinions and reduce retrieval accuracy.
 
 ---
 
@@ -146,7 +146,7 @@ Generation (Groq Llama-3.3-70B)
 
 **Milestone 3 — Ingestion and chunking:**
 
-I will use ChatGPT to help implement the document ingestion and chunking pipeline. I will provide the Documents section, Chunking Strategy section, and Architecture diagram from this planning document. I will ask ChatGPT to generate Python code that loads text documents, cleans unnecessary content, and splits them into chunks of 500 characters with a 100-character overlap. I will verify the output by inspecting at least five generated chunks to ensure they are readable, self-contained, and match my chunking specifications.
+I will use ChatGPT to help implement the document ingestion and chunking pipeline. I will provide the Documents section, Chunking Strategy section, and Architecture diagram from this planning document. I will ask ChatGPT to generate Python code that loads text documents, cleans unnecessary content, and splits them into chunks of 200 characters with a 40-character overlap. I will verify the output by inspecting at least five generated chunks to ensure they are readable, self-contained, and match my chunking specifications.
 
 **Milestone 4 — Embedding and retrieval:**
 
