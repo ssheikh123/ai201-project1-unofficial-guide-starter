@@ -4,8 +4,8 @@ from pathlib import Path
 
 DATA_DIR = Path("../data/raw")
 
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 100
+CHUNK_SIZE = 200
+CHUNK_OVERLAP = 40
 
 def clean_text(text):
     text = text.replace("&", "&")

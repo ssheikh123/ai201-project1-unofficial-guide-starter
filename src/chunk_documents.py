@@ -1,7 +1,7 @@
 from pathlib import Path
 
-CHUNK_SIZE = 100
-OVERLAP = 20
+CHUNK_SIZE = 200
+OVERLAP = 40
 
 raw_dir = Path("../data/raw")
 
